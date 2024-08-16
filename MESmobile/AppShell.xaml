@@ -1,38 +1,75 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!--<Shell
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MESmobile.AppShell">
-
-    --><!-- Login Page --><!--
-    <ShellContent 
-        Title="Login" 
-        ContentTemplate="{DataTemplate MESmobile.Pages.LoginPage}" 
-        Route="LoginPage" />
-
-    --><!-- Home Page (to be implemented next) --><!--
-    <ShellContent 
-        Title="Home" 
-        ContentTemplate="{DataTemplate MESmobile.Pages.HomePage}" 
-        Route="HomePage" />
-</Shell>-->
-    
 <Shell
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MESmobile.Pages"
-    x:Class="MESmobile.AppShell">
-
-    <!-- Login Page -->
+    x:Class="MESmobile.AppShell"
+    FlyoutBehavior="Flyout"
+    BackgroundColor="Black"
+    TitleColor="White"
+    Shell.ForegroundColor="White"
+    Shell.BackgroundColor="Black">
+    
     <ShellContent 
         Title="Login" 
         ContentTemplate="{DataTemplate local:LoginPage}" 
         Route="LoginPage" />
 
-    <!-- Home Page -->
+    <!-- Flyout Header -->
+    <FlyoutItem Title="Home" 
+                FlyoutDisplayOptions="AsMultipleItems" 
+                Icon="home.png">
+        <ShellContent 
+            Title="Home" 
+            ContentTemplate="{DataTemplate local:HomePage}" 
+            Route="HomePage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Manual Palletizer" 
+                Icon="palletizer.png">
+        <ShellContent 
+            Title="Manual Palletizer" 
+            ContentTemplate="{DataTemplate local:ManualPalletizerPage}" 
+            Route="ManualPalletizerPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Cart Order" 
+                Icon="cart.png">
+        <ShellContent 
+            Title="Cart Order" 
+            ContentTemplate="{DataTemplate local:CartOrderPage}" 
+            Route="CartOrderPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Maintenance" 
+                Icon="maintenance.png">
+        <ShellContent 
+            Title="Maintenance" 
+            ContentTemplate="{DataTemplate local:MaintenancePage}" 
+            Route="MaintenancePage" />
+    </FlyoutItem>
+
+    <!-- Logout Button -->
+    <MenuItem Text="Logout"
+              Clicked="OnLogoutClicked"
+              IconImageSource="logout.png"/>
+
+</Shell>
+
+
+<!--<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MESmobile.Pages"
+    x:Class="MESmobile.AppShell">
+    
+    <ShellContent 
+        Title="Login" 
+        ContentTemplate="{DataTemplate local:LoginPage}" 
+        Route="LoginPage" />
+    
     <ShellContent 
         Title="Home" 
         ContentTemplate="{DataTemplate local:HomePage}" 
         Route="HomePage" />
-
-</Shell>
+</Shell>-->
