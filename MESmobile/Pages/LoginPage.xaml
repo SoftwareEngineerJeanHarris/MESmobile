@@ -1,0 +1,30 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MESmobile.Pages.LoginPage"
+             BackgroundColor="Black">
+
+    <StackLayout VerticalOptions="CenterAndExpand" 
+                 HorizontalOptions="CenterAndExpand"
+                 Padding="30">
+
+        <Label Text="MES Login" 
+               FontSize="24"
+               HorizontalOptions="Center"
+               TextColor="White" />
+
+        <Entry x:Name="UsernameEntry"
+               Placeholder="Enter Username"
+               TextColor="White"
+               PlaceholderColor="Gray"
+               BackgroundColor="#1a1a1a"
+               Margin="0,20,0,0"
+               FontSize="18" />
+
+        <Button Text="Login"
+                Clicked="OnLoginButtonClicked"
+                BackgroundColor="#33b249"
+                TextColor="White"
+                Margin="0,20,0,0"
+                FontSize="18" />
+    </StackLayout>
+</ContentPage>
